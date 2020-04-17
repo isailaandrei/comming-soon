@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['RCA_DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ['DJANGO_DEBUG'] in (True, 'True'))
 
-ALLOWED_HOSTS = ['0.0.0.0', 'rcaasigurari.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'rcaasigurari.herokuapp.com', 'www.rca.online']
 
 
 # Application definition
