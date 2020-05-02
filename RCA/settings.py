@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['RCA_DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ['DJANGO_DEBUG'] in (True, 'True'))
 
-ALLOWED_HOSTS = ['0.0.0.0', 'rcaasigurari.herokuapp.com', 'www.rca.online']
+ALLOWED_HOSTS = ['0.0.0.0', 'rcaasigurari.herokuapp.com', 'www.rca.online', 'localhost']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'RCA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['rca/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
